@@ -1,348 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janusz Majewski</title>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janusz Majewski — Operations &amp; Delivery Leader</title>
+<meta name="description" content="Janusz Majewski — operational leader in Salesforce and data-platform delivery, based in Cracow, Poland.">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --border: #e4e2dc;
+    --text: #1c1c1a;
+    --text-dim: #55534c;
+    --accent: #8a6d3b;
+    --accent-soft: #f1e9db;
+  }
+  @media (prefers-color-scheme: dark) {
     :root {
-      --bg:       #0e0e12;
-      --surface:  #16161e;
-      --border:   #252535;
-      --text:     #e8e8f0;
-      --muted:    #8a8ab0;
-      --accent:   #3b82f6;
-      --accent-h: #60a5fa;
-      --gold:     #d4a843;
+      --bg: #15140f;
+      --surface: #1d1c15;
+      --border: #34321f;
+      --text: #f2f0e8;
+      --text-dim: #b8b4a6;
+      --accent: #d6b370;
+      --accent-soft: #2a2416;
     }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+  header.hero { margin-bottom: 48px; }
+  header.hero h1 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  header.hero .tagline {
+    color: var(--accent);
+    font-style: italic;
+    font-size: 1.05rem;
+    margin: 0 0 18px;
+  }
+  header.hero .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+  }
+  header.hero .meta a { color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--border); }
+  header.hero .meta a:hover { color: var(--accent); border-color: var(--accent); }
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(14,14,18,0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-      padding: 12px 24px;
-    }
+  section { margin-bottom: 44px; }
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  p.summary { color: var(--text-dim); font-size: 1.02rem; }
 
-    nav ul {
-      display: flex;
-      gap: 16px;
-      list-style: none;
-    }
+  .job { margin-bottom: 28px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  .job-title { font-weight: bold; font-size: 1.05rem; }
+  .job-dates {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .job-org { color: var(--accent); font-size: 0.95rem; margin-bottom: 2px; }
+  .job-loc {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .job-desc { color: var(--text-dim); font-size: 0.97rem; }
+  .job-desc ul { margin: 8px 0 0; padding-left: 20px; }
+  .job-desc li { margin-bottom: 4px; }
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color .15s;
-    }
+  .company-group { margin-bottom: 28px; }
+  .company-group > .company-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+  .company-group > .company-span {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .role { margin-bottom: 18px; padding-left: 16px; border-left: 2px solid var(--border); }
+  .role:last-child { margin-bottom: 0; }
 
-    nav a:hover, nav a.active { color: var(--accent-h); }
+  .edu-item { margin-bottom: 14px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree { font-weight: bold; }
+  .edu-meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
 
-    .hero { padding: 56px 0 36px; }
+  .grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 560px) {
+    .grid-two { grid-template-columns: 1fr; gap: 28px; }
+  }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 4px;
-    }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.82rem;
+    padding: 5px 12px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+  }
 
-    .hero .tagline {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 520px;
-      line-height: 1.5;
-    }
+  .lang-row { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 6px; }
+  .lang-row span:last-child { color: var(--text-dim); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; }
 
-    .motto {
-      color: var(--gold);
-      font-style: italic;
-      font-size: 1.05rem;
-      margin-top: 10px;
-    }
-
-    section { padding: 36px 0; border-top: 1px solid var(--border); }
-
-    section:last-of-type { border-top: none; }
-
-    h2 {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .card .role {
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .card ul {
-      margin-left: 16px;
-      margin-top: 8px;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .card li { margin-bottom: 4px; }
-
-    .card li:last-child { margin-bottom: 0; }
-
-    .badge {
-      display: inline-block;
-      padding: 4px 11px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin: 3px;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 8px 0;
-    }
-
-    .divider { color: var(--muted); font-size: 0.8rem; text-align: center; margin: 16px 0; }
-
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
-    }
-
-    .contact a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 15px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.88rem;
-      transition: background .12s;
-    }
-
-    .contact a:hover { background: var(--surface); }
-
-    footer {
-      padding: 24px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.78rem;
-      border-top: 1px solid var(--border);
-      margin-top: 40px;
-    }
-
-    @media (max-width: 560px) {
-      nav { padding: 10px 16px; }
-      nav ul { gap: 10px; }
-      .hero { padding: 40px 0 28px; }
-      section { padding: 24px 0; }
-    }
-  </style>
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <nav>
-    <ul>
-      <li><a href="#about" class="active">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header class="hero">
+    <h1>Janusz Majewski</h1>
+    <p class="tagline">"Do or do not, there is no try."</p>
+    <div class="meta">
+      <span>Cracow Metropolitan Area, Poland</span>
+      <a href="mailto:januszjerzymajewski@gmail.com">januszjerzymajewski@gmail.com</a>
+      <a href="https://www.linkedin.com/in/januszmajewski" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
 
-  <main>
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">
+      Experienced operational leader with a robust IT background, adept at enhancing efficiencies,
+      managing resources, and fostering team growth across various company sizes — from startups to
+      global enterprises. Known for implementing effective strategies that streamline operations and
+      support scalable growth, particularly within Salesforce and data-platform environments.
+    </p>
+  </section>
 
-    <section class="hero">
-      <h1>Janusz <span>Majewski</span></h1>
-      <p class="tagline">Experienced operational leader. Databricks consulting. Salesforce platforms. Cracow, Poland.</p>
-      <p class="motto">Do or do not, there is no try.</p>
-    </section>
+  <section>
+    <h2>Experience</h2>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="card">
-        <h3>Summary</h3>
-        <p>Experienced operational leader with a robust IT background, adept at enhancing efficiencies, managing resources, and fostering team growth across various company sizes — from startups to global enterprises. Known for implementing effective strategies that streamline operations and support scalable growth, particularly within Salesforce platforms.</p>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Director</div>
+        <div class="job-dates">Jul 2025 – Present · 1 yr 3 mo</div>
       </div>
+      <div class="job-org">Entrada</div>
+      <div class="job-loc">Cracow, Małopolskie, Poland</div>
+      <div class="job-desc">
+        Strategic leader expanding Entrada's Poland operations. Building elite Databricks consulting
+        teams through systematic talent evaluation, scalable operational frameworks, and pragmatic
+        execution. Focused on technical excellence, team development, and value-driven client delivery
+        in the data platform space.
+      </div>
+    </div>
 
-      <div class="card">
-        <h3>Current Role</h3>
-        <p class="role">Director · Entrada · Cracow · Since July 2025</p>
-        <p>Strategic leader expanding Poland operations. Building elite Databricks consulting teams through systematic talent evaluation, scalable operational frameworks, and pragmatic execution. Focused on technical excellence, team development, and value-driven client delivery in the data platform space.</p>
-        <div class="skills-grid">
-          <span class="badge">Databricks</span>
-          <span class="badge">Consulting</span>
-          <span class="badge">Team Leadership</span>
-          <span class="badge">Operations</span>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Senior Manager, Solution Practice Operations</div>
+        <div class="job-dates">Apr 2022 – Jul 2025 · 3 yr 4 mo</div>
+      </div>
+      <div class="job-org">EPAM Systems</div>
+      <div class="job-loc">Krakow Metropolitan Area</div>
+      <div class="job-desc">
+        Joined EPAM Systems through the acquisition of Polsource, taking on a pivotal role in
+        enhancing the global Salesforce Practice by introducing the Smart Resourcing approach.
+        <ul>
+          <li><strong>Operational Excellence:</strong> spearheaded unified reporting for revenue forecasting, backlog tracking, and utilization.</li>
+          <li><strong>Scalability and Efficiency:</strong> developed agile processes supporting the organization's staffing scalability.</li>
+          <li><strong>Strategic Staffing:</strong> primary contact for staffing escalations on major accounts.</li>
+          <li><strong>Opportunity Focus:</strong> guided the Salesforce Practice to prioritize significant opportunities, reducing staffing times.</li>
+          <li><strong>Leadership:</strong> managed a diverse operations team of 5 across two continents.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-name">PolSource</div>
+      <div class="company-span">3 yr 2 mo</div>
+
+      <div class="role">
+        <div class="job-head">
+          <div class="job-title">Sales and Delivery Operations Manager</div>
+          <div class="job-dates">Jan 2020 – Apr 2022 · 2 yr 4 mo</div>
+        </div>
+        <div class="job-loc">Kraków Area, Poland</div>
+        <div class="job-desc">
+          Drove digital transformation and Salesforce adoption, focusing on maximizing technology
+          investment returns for clients.
+          <ul>
+            <li><strong>Operational Oversight:</strong> monitored global operations — financial management, reporting, and governance across a large project portfolio.</li>
+            <li><strong>Metrics and Stakeholder Engagement:</strong> managed key reporting metrics (forecasts, utilization, margins).</li>
+            <li><strong>Cross-Functional Collaboration:</strong> central point across service lines for complex project delivery.</li>
+            <li><strong>Problem-Solving:</strong> proactively streamlined operations for sales and delivery teams.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="card">
-        <h3>Languages</h3>
-        <p>
-          <strong>Polish</strong> — Native ·
-          <strong>English</strong> — Full Professional ·
-          <strong>Spanish</strong> — Limited Working ·
-          <strong>Chinese</strong> — Elementary
-        </p>
+      <div class="role">
+        <div class="job-head">
+          <div class="job-title">Resource Planning Specialist</div>
+          <div class="job-dates">Mar 2019 – Dec 2019 · 10 mo</div>
+        </div>
+        <div class="job-loc">Kraków Area, Poland</div>
+        <div class="job-desc">
+          Optimized staff utilization with Project Managers, forecasting pipeline demand and aligning
+          sourcing strategy within budget. Led the transition from Google Sheets to Precursive, a
+          purpose-built resourcing tool, improving operational efficiency across the organization.
+        </div>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-name">Azimo</div>
+      <div class="company-span">3 yr 4 mo</div>
+
+      <div class="role">
+        <div class="job-head">
+          <div class="job-title">Head of Payments Operations</div>
+          <div class="job-dates">Mar 2017 – Feb 2019 · 2 yr</div>
+        </div>
+        <div class="job-loc">Kraków</div>
+        <div class="job-desc">
+          At Azimo, a fintech pioneer in cross-border transactions:
+          <ul>
+            <li><strong>Operational Strategy:</strong> maintained protocols for incident management and global partner operations.</li>
+            <li><strong>Project Leadership:</strong> lowered transaction rejection rates, increased automation, introduced new payment channels.</li>
+            <li><strong>Team Development:</strong> grew the Operations team from 2 to 7 over two years.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Certifications</h3>
-        <p>
-          <strong>Hanyu Shuiping Kaoshi 4</strong> ·
-          <strong>Google Cloud Digital Leader Training</strong>
-        </p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="card">
-        <h3>Entrada</h3>
-        <p class="role">Director · Jul 2025 – Present · Cracow</p>
-        <p>Expanding Poland operations. Building elite Databricks consulting teams through systematic talent evaluation, scalable operational frameworks, and pragmatic execution. Focused on technical excellence, team development, and value-driven client delivery in the data platform space.</p>
+      <div class="role">
+        <div class="job-head">
+          <div class="job-title">Operations Team Lead</div>
+          <div class="job-dates">Aug 2016 – Apr 2017 · 9 mo</div>
+        </div>
+        <div class="job-loc">Kraków Area, Poland</div>
+        <div class="job-desc">
+          Set objectives, allocated tasks, and managed day-to-day operations for a small, globally
+          distributed team — streamlining manual processes and identifying automation opportunities.
+        </div>
       </div>
 
-      <div class="card">
-        <h3>EPAM Systems</h3>
-        <p class="role">Senior Manager, Solution Practice Operations · Apr 2022 – Jul 2025 · Krakow</p>
-        <p>Joined through Polsource acquisition, leading global Salesforce Practice enhancement via the Smart Resourcing approach.</p>
-        <ul>
-          <li><strong>Operational Excellence</strong> — Spearheaded unified reporting for critical KPIs: revenue forecasting, backlog tracking, utilization.</li>
-          <li><strong>Scalability & Efficiency</strong> — Agile processes to support organizational scalability, particularly staffing.</li>
-          <li><strong>Strategic Staffing</strong> — Primary contact for major-account staffing escalations, streamlining Salesforce solution implementation.</li>
-          <li><strong>Opportunity Focus</strong> — Prioritized significant opportunities, reducing staffing times and improving project initiation speed.</li>
-          <li><strong>Leadership</strong> — Managed a 5-person cross-continental operations team.</li>
-        </ul>
+      <div class="role">
+        <div class="job-head">
+          <div class="job-title">Operations Specialist</div>
+          <div class="job-dates">Nov 2015 – Aug 2016 · 10 mo</div>
+        </div>
+        <div class="job-loc">Kraków Area, Poland</div>
+        <div class="job-desc">
+          Managed operational tasks with external partners on transaction issues, supporting the
+          Customer Care Team directly.
+        </div>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>PolSource</h3>
-        <p class="role">Sales and Delivery Operations Manager · Jan 2020 – Apr 2022 · Krakow</p>
-        <p>Central to digital transformation and Salesforce adoption, maximizing technology investment returns for clients.</p>
-        <ul>
-          <li><strong>Operational Oversight</strong> — Global business operations, financial management, governance across vast project portfolios.</li>
-          <li><strong>Metrics & Stakeholder Engagement</strong> — Developed reporting metrics (financial forecasts, utilization, margins) and engaged internal stakeholders.</li>
-          <li><strong>Tool Transition</strong> — Led migration from Google Sheets to Precursive for resourcing — significantly improved efficiency and project management.</li>
-        </ul>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Freelance Translator</div>
+        <div class="job-dates">Jan 2013 – Sep 2016 · 3 yr 9 mo</div>
       </div>
+      <div class="job-org">Translex</div>
+      <div class="job-loc">Lesser Poland District, Bochnia County, Poland</div>
+      <div class="job-desc">Translation of written documents, researching legal and technical phraseology.</div>
+    </div>
 
-      <div class="card">
-        <h3>Azimo</h3>
-        <p class="role">Head of Payments Operations · Mar 2017 – Feb 2019 · Krakow</p>
-        <p>Operational strategy and team leadership at a fintech company simplifying cross-border transactions.</p>
-        <ul>
-          <li>Developed operational systems and protocols for incident management and partner operations.</li>
-          <li>Led projects to lower transaction rejection rates and introduce new payment channels.</li>
-          <li>Grew the Operations team from 2 to 7 members.</li>
-        </ul>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Phone Consultant</div>
+        <div class="job-dates">Oct 2011 – Feb 2012 · 5 mo</div>
       </div>
+      <div class="job-org">Alior Bank S.A.</div>
+      <div class="job-loc">Cracow, Lesser Poland District, Poland</div>
+      <div class="job-desc">Dealing with customers, selling bank products and services.</div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3>Azimo</h3>
-        <p class="role">Operations Team Lead · Aug 2016 – Apr 2017 · Krakow</p>
-        <p>Day-to-day operations, streamlining processes, automation, performance monitoring, and team development in a small, globally distributed group.</p>
-      </div>
+  <section>
+    <h2>Education</h2>
+    <div class="edu-item">
+      <div class="edu-degree">Cracow University of Economics</div>
+      <div class="edu-meta">Master's degree, International Business · 2013 – 2015</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">North University of China</div>
+      <div class="edu-meta">Exchange Program, Sinology · 2015</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Wyższa Szkoła Europejska im. Ks. Józefa Tischnera</div>
+      <div class="edu-meta">Bachelor's degree, English Language and Literature · 2012 – 2015</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Jagiellonian University</div>
+      <div class="edu-meta">Bachelor's degree, International Relations and Affairs · 2009 – 2012</div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3>Azimo</h3>
-        <p class="role">Operations Specialist · Nov 2015 – Aug 2016 · Krakow</p>
-        <p>Operational tasks, external partner coordination on transaction issues, support to Customer Care Team for issue resolution.</p>
+  <section class="grid-two">
+    <div>
+      <h2>Top Skills</h2>
+      <div class="tag-list">
+        <span class="tag">Translation</span>
+        <span class="tag">English</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Salesforce</span>
+        <span class="tag">Operations Leadership</span>
       </div>
+    </div>
+    <div>
+      <h2>Languages</h2>
+      <div class="lang-row"><span>English</span><span>Full Professional</span></div>
+      <div class="lang-row"><span>Polish</span><span>Native / Bilingual</span></div>
+      <div class="lang-row"><span>Spanish</span><span>Limited Working</span></div>
+      <div class="lang-row"><span>Chinese</span><span>Elementary</span></div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3>Alior Bank S.A.</h3>
-        <p class="role">Phone Consultant · Oct 2011 – Feb 2012 · Krakow</p>
-        <p>Customer-facing sales of bank products and services.</p>
-      </div>
-
-      <div class="card">
-        <h3>Translex</h3>
-        <p class="role">Freelance Translator · Jan 2013 – Sep 2016 · Bochnia</p>
-        <p>Translation of legal and technical documents.</p>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>Cracow University of Economics</h3>
-        <p class="role">Master's degree — International Business · 2013 – 2015</p>
-      </div>
-      <div class="card">
-        <h3>North University of China</h3>
-        <p class="role">Exchange Program — Sinology · 2015</p>
-      </div>
-      <div class="card">
-        <h3>Wyższa Szkoła Europejska im. Ks. Józefa Tischnera</h3>
-        <p class="role">Bachelor's degree — English Language and Literature · 2012 – 2015</p>
-      </div>
-      <div class="card">
-        <h3>Jagiellonian University</h3>
-        <p class="role">Bachelor's degree — International Relations and Affairs · 2009 – 2012</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact">
-        <a href="mailto:januszjerzymajewski@gmail.com">✉ januszjerzymajewski@gmail.com</a>
-        <a href="https://www.linkedin.com/in/januszmajewski/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-
-  </main>
+  <section>
+    <h2>Certifications</h2>
+    <div class="tag-list">
+      <span class="tag">Hanyu Shuiping Kaoshi 4</span>
+      <span class="tag">Google Cloud Digital Leader Training Specialization</span>
+    </div>
+  </section>
 
   <footer>
-    <p>Janusz Majewski · Built locally</p>
+    Janusz Majewski · Cracow, Poland · <a href="mailto:januszjerzymajewski@gmail.com" style="color:inherit;">januszjerzymajewski@gmail.com</a>
   </footer>
 
+</div>
 </body>
 </html>
